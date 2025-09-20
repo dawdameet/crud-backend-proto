@@ -94,7 +94,7 @@ process.on('SIGINT', () => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   logger.info(`Server running on port ${PORT}`, {
     port: PORT,
     environment: process.env.NODE_ENV || 'development'
@@ -102,6 +102,7 @@ app.listen(PORT, () => {
   
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📚 API Documentation: http://localhost:${PORT}/health`);
+  console.log(`🌐 Network access: http://10.120.104.145:${PORT}/health`);
   console.log(`🔒 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 
