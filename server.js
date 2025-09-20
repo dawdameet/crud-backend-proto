@@ -25,7 +25,7 @@ app.use(speedLimiter);
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? ['https://yourdomain.com'] // Replace with your actual domain
-    : ['http://localhost:3000', 'http://localhost:19006', 'exp://192.168.1.100:19000'], // React Native development
+    : ['http://localhost:3000', 'http://localhost:19006', 'http://192.168.217.42:3000', 'exp://192.168.217.42:19000'], // React Native development
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -102,7 +102,7 @@ app.listen(PORT, '0.0.0.0', () => {
   
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📚 API Documentation: http://localhost:${PORT}/health`);
-  console.log(`🌐 Network access: http://10.120.104.145:${PORT}/health`);
+  console.log(`🌐 Network access: http://192.168.217.42:${PORT}/health`);
   console.log(`🔒 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 
