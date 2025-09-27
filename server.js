@@ -9,6 +9,7 @@ const { generalLimiter, speedLimiter, sanitizeInputs, securityHeaders, requestLo
 // Import routes
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
+const dangerZoneRoutes = require('./routes/dangerZoneRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -54,6 +55,7 @@ app.get('/health', (req, res) => {
 // API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/danger-zones', dangerZoneRoutes);
 
 // 404 handler
 app.use('*', (req, res) => {
